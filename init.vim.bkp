@@ -1,0 +1,54 @@
+" setting leader as space
+let mapleader = " "
+
+" turn hybrid line numbers on
+:set number relativenumber
+
+" config cursor
+set cursorcolumn
+set cursorline
+
+" Saving file
+nnoremap <C-s> :wa<CR>
+:set autowrite
+
+" Shortcut for plane navigation
+nnoremap <A-l> <C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+
+" Shortcut for tab navigation
+noremap <A-H> gT
+noremap <A-L> gt
+
+" NERDTree configurations
+let NERDTreeQuitOnOpen=1
+nnoremap <leader>n :NERDTreeToggle<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" Configuring FZF
+set rtp+=/opt/homebrew/opt/fzf
+nnoremap <A-f> :Files<CR>
+nnoremap <leader><leader>a :Files<CR>
+
+" Configure FloatTerm
+let g:floaterm_keymap_toggle = "<F9>"
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.7
+
+" Configuring tabulation
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set expandtab
+
+" Colorscheme using https://github.com/catppuccin/nvim.git
+colorscheme catppuccin-mocha
