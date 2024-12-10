@@ -6,7 +6,8 @@ return {
       'go',
       'vim',
       'terraform',
-      'bash'
+      'bash',
+      'just'
     },
     sync_install = false,
     auto_install = true,

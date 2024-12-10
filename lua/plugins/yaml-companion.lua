@@ -7,5 +7,9 @@ return {
   },
   config = function ()
     require("telescope").load_extension("yaml_schema")
-  end
+    local cfg = require("yaml-companion").setup()
+    require("lspconfig")["yamlls"].setup(cfg)
+
+    vim.keymap.set("n", "<leader>ys", "<cmd>:Telescope yaml_schema<cr>")
+  end,
 }
