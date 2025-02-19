@@ -8,10 +8,13 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "terraformls",
         "tflint",
         "yamlls",
+        "pyright",
+        "kcl",
+        "bashls"
       },
+      automatic_installation = true
     },
   },
   {
@@ -64,6 +67,14 @@ return {
       lspconfig.yamlls.setup {}
 
       lspconfig.gopls.setup {
+        capabilities = capabilities
+      }
+
+      lspconfig.pyright.setup {
+        capabilities = capabilities
+      }
+
+      lspconfig.kcl.setup {
         capabilities = capabilities
       }
 

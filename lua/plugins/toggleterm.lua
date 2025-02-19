@@ -19,11 +19,23 @@ return {
         direction = 'float',
       })
 
+      local k9s = Terminal:new({
+        cmd = "k9s",
+        hidden = true,
+        direction = 'float',
+      })
+
       function _lazygit_toggle()
         lazygit:toggle()
       end
 
+      function _k9s_toggle()
+        k9s:toggle()
+      end
+
       vim.api.nvim_set_keymap("n", "<F10>", "<cmd> lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+      vim.api.nvim_set_keymap("n", "<F8>", "<cmd> lua _k9s_toggle()<CR>", {noremap = true, silent = true})
+      vim.api.nvim_set_keymap("n", "<leader>ft", "<cmd>TermSelect<CR>", {noremap = true, silent = true})
     end
 	},
 }

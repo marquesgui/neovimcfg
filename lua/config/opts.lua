@@ -12,6 +12,7 @@ vim.opt.cursorline = true
 
 -- saving files
 vim.opt.autowrite = true
+vim.opt.autowriteall = true
 
 -- tabulation
 vim.opt.tabstop = 2

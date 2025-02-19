@@ -18,22 +18,21 @@ return {
     adapters = {
       llama3 = function()
         return require("codecompanion.adapters").extend("ollama", {
+          name = "llama3",
           schema = {
             model = {
               default = "llama3.2:latest",
             },
           },
         })
-      end,
-      nomic = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          schema = {
-            model = {
-              default = "nomic-embed-text",
-            },
-          },
-        })
       end
+    },
+    display = {
+      chat = {
+        window = {
+          position = "right"
+        }
+      }
     }
   }
 }
