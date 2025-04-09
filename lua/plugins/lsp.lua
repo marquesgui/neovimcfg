@@ -11,8 +11,9 @@ return {
         "tflint",
         "yamlls",
         "pyright",
-        "kcl",
-        "bashls"
+        "bashls",
+        "terraformls",
+        "helm_ls",
       },
       automatic_installation = true
     },

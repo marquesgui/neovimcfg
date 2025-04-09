@@ -23,3 +23,6 @@ vim.opt.expandtab = true
 
 -- Scroll
 vim.opt.scrolloff = 10
+
+-- Lsp logs
+vim.lsp.set_log_level("off")
